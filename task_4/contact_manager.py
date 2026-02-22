@@ -13,7 +13,7 @@ def add_contact(args: list, contacts: dict) -> str:
 @attrs_count(2, 'Give me name and phone please.')
 def change_contact(args: list, contacts: dict) -> str:
     """Змінює номер телефону існуючого контакту"""
-    name, phone = args
+    name, phone = args # тут мала бути помилка яка оброблена input_error
     if name not in contacts:
         raise KeyError
     contacts[name] = phone
@@ -24,7 +24,7 @@ def change_contact(args: list, contacts: dict) -> str:
 @attrs_count(1, 'Give me name please.')
 def get_contact(args: list, contacts: dict) -> str:
     """Повертає номер телефону за ім'ям контакту"""
-    name = args[0]
+    name = args[0] # тут мала бути помилка яка оброблена input_error
     if name not in contacts:
         raise KeyError
     return contacts[name]
